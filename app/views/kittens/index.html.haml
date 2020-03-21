@@ -1,0 +1,14 @@
+%h1 Welcome to Odin-Kittens 
+%p The only kitten app you'll ever need
+
+%h2 Featured Kittens
+
+- @kittens.each do |kitten|
+    %p
+        =link_to kitten.name, kitten_path(kitten)
+        =link_to "Edit", edit_kitten_path(kitten)
+        =link_to "Delete", kitten_path(kitten), method: :delete, data: {confirm: "Are you sure?"}
+%br
+= link_to "Create a New Kitten", new_kitten_path
+
+    
